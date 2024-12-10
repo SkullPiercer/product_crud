@@ -1,4 +1,4 @@
-from sqlalchemy import Column, Numeric, String, Text
+from sqlalchemy import Column, DECIMAL, String, Text
 
 from app.core.constants import (
     CATEGORY_MAX_LEN, PRICE_PRECISION, PRICE_SCALE, PRODUCT_NAME_MAX_LEN
@@ -13,7 +13,7 @@ class Product(Base):
         nullable=False
     )
     price = Column(
-        Numeric(PRICE_PRECISION, PRICE_SCALE),
+        DECIMAL(PRICE_PRECISION, PRICE_SCALE),
         nullable=False
     )
     description = Column(

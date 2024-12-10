@@ -4,6 +4,7 @@ from fastapi import HTTPException
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from app.crud.product import product_crud
+from app.models import Product
 
 
 async def check_name_duplicate(
@@ -14,5 +15,20 @@ async def check_name_duplicate(
     if room_id is not None:
         raise HTTPException(
             status_code=HTTPStatus.BAD_REQUEST,
-            detail='Проект с таким именем уже существует!',
+            detail='Продукт с таким именем уже существует!',
         )
+
+
+async def check_product_exists(
+        product_id: int,
+        session: AsyncSession,
+) -> Product:
+    product = await product_crud.get(
+        product_id, session
+    )
+    if product is None:
+        raise HTTPException(
+            status_code=HTTPStatus.NOT_FOUND,
+            detail='Продукт не найден!'
+        )
+    return product
