@@ -2,6 +2,8 @@ aiosqlite==0.17.0
 alembic==1.7.7
 anyio==3.6.1
 asgiref==3.5.2
+async-timeout==5.0.1
+asyncpg==0.30.0
 attrs==21.4.0
 bcrypt==3.2.2
 certifi==2022.5.18.1
@@ -30,6 +32,7 @@ mixer==7.2.2
 packaging==21.3
 passlib==1.7.4
 pluggy==1.0.0
+psycopg2-binary==2.9.10
 py==1.11.0
 pycodestyle==2.8.0
 pycparser==2.21
