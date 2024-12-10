@@ -1,6 +1,6 @@
 APP_TITLE=your app title
 APP_DESCRIPTION=your app description
-DATABASE_URL=postgresql+asyncpg://user:password@localhost:5432/mydatabase
+DATABASE_URL='sqlite+aiosqlite:///./fastapi.db'
 SECRET=SOMETEXTFORSECRETWORD
 FIRST_SUPERUSER_EMAIL=admin_email@domain.com
 FIRST_SUPERUSER_PASSWORD=AdminPassword
